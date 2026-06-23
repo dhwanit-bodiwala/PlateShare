@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_warm">
+
+    <!-- Saffron circle top right — signature element -->
+    <View
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-80dp"
+        android:layout_marginEnd="-80dp"
+        android:background="@drawable/oval_deco"/>
+
+    <!-- Small green circle bottom left -->
+    <View
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-50dp"
+        android:layout_marginStart="-50dp"
+        android:background="@drawable/oval_deco"/>
+
+    <!-- Left-aligned brand block -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="36dp"
+        android:orientation="vertical">
+
+        <!-- Green dot accent above title -->
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/oval_deco"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plate"
+            android:textColor="@color/text_primary"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:lineSpacingExtra="-4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:textColor="@color/green_deep"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food shared is love multiplied."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
