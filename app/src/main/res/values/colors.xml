@@ -4,15 +4,14 @@
     <color name="colorPrimaryDark">#1B4332</color>
     <color name="colorAccent">#F4A261</color>
     <color name="bg_warm">#FAFAF7</color>
-    <color name="bg_card">#FFFFFF</color>
     <color name="bg_input">#F0F4F1</color>
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#6B7280</color>
     <color name="text_hint">#9CA3AF</color>
     <color name="green_deep">#2D6A4F</color>
-    <color name="green_light">#52B788</color>
     <color name="saffron">#F4A261</color>
     <color name="saffron_dark">#E07C3A</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#1A1A1A</color>
+    <color name="border">#1A1A1A</color>
 </resources>

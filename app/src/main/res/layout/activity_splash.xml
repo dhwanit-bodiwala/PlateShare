@@ -4,68 +4,72 @@
     android:layout_height="match_parent"
     android:background="@color/bg_warm">
 
-    <!-- Saffron circle top right — signature element -->
     <View
-        android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/saffron"/>
+
+    <View
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-80dp"
-        android:layout_marginEnd="-80dp"
+        android:layout_marginTop="-70dp"
+        android:layout_marginEnd="-70dp"
         android:background="@drawable/oval_deco"/>
 
-    <!-- Small green circle bottom left -->
-    <View
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="-50dp"
-        android:layout_marginStart="-50dp"
-        android:background="@drawable/oval_deco"/>
-
-    <!-- Left-aligned brand block -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="36dp"
-        android:orientation="vertical">
-
-        <!-- Green dot accent above title -->
-        <View
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/oval_deco"/>
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Plate"
+            android:text="PLATE"
             android:textColor="@color/text_primary"
-            android:textSize="52sp"
+            android:textSize="68sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-black"
-            android:lineSpacingExtra="-4dp"/>
+            android:letterSpacing="-0.02"/>
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/green_deep"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Share"
+            android:text="SHARE"
             android:textColor="@color/green_deep"
-            android:textSize="52sp"
+            android:textSize="68sp"
             android:textStyle="bold"
-            android:fontFamily="sans-serif-black"/>
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="-0.02"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food shared is love multiplied."
+            android:text="FOOD SHARED IS LOVE MULTIPLIED."
             android:textColor="@color/text_secondary"
-            android:textSize="14sp"
-            android:layout_marginTop="16dp"/>
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"
+            android:layout_marginTop="18dp"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:background="@color/border"/>
 
 </RelativeLayout>
