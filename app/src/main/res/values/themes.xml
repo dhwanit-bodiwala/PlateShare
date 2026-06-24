@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.PlateShare" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.PlateShare" parent="Base.Theme.PlateShare" />
+    <style name="Theme.PlateShare" parent="Base.Theme.PlateShare">
+        <item name="bottomNavigationStyle">@style/PlateShareBottomNav</item>
+    </style>
+
+    <style name="PlateShareBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/PlateShareActiveIndicator</item>
+    </style>
+
+    <style name="PlateShareActiveIndicator" parent="@style/Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#F4A261</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+    </style>
+
 </resources>

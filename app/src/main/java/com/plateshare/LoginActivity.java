@@ -40,11 +40,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
         guest_login.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            intent.putExtra("user_name","guest");
+            startActivity(intent);
         });
 
         forgot_password_login.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         });
 
         signup_login.setOnClickListener(v -> {
@@ -102,7 +104,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals(getEmail) && password.equals(getPassword)){
                     flag = true;
                     Toast.makeText(this, "Welcome "+getName, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    intent.putExtra("user_name",getName);
+                    intent.putExtra("user_email",getEmail);
                     startActivity(intent);
                     finish();
                     break;

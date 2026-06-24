@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_centers"
+        android:title="Nearby Centers"
+        android:icon="@android:drawable/ic_menu_mapmode"/>
+
+    <item
+        android:id="@+id/nav_donations"
+        android:title="My Donations"
+        android:icon="@android:drawable/ic_menu_agenda"/>
+
+</menu>
