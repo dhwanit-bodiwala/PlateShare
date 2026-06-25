@@ -1,5 +1,6 @@
 package com.plateshare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,11 +65,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
         profile_btn.setOnClickListener(v -> {
-            // nav to profile activity
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            intent.putExtra("user_email", userEmail);
+            startActivity(intent);
         });
 
         donate_btn.setOnClickListener(v -> {
-            // nav to donate activity
+            Intent intent = new Intent(HomeActivity.this, DonateFoodActivity.class);
+            intent.putExtra("user_email",userEmail);
+            startActivity(intent);
         });
 
 
