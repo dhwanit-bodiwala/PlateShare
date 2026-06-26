@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         forgot_password_login.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
         });
 
         signup_login.setOnClickListener(v -> {

@@ -45,6 +45,12 @@
         <activity
             android:name=".DonateFoodActivity"
             android:exported="false"/>
+        
+        <activity android:name=".ForgotPasswordActivity" android:exported="false"/>
+        
+        <activity android:name="ChangePasswordActivity" android:exported="false"/>
+
+        <activity android:name=".EditProfileActivity" android:exported="false"/>
 
     </application>
 

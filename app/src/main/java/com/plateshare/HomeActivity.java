@@ -40,9 +40,24 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
+
+
+        MyDonationsFragment donationsFragment = new MyDonationsFragment();
+        Bundle donationsBundle = new Bundle();
+        donationsBundle.putString("user_email", userEmail);
+        donationsFragment.setArguments(donationsBundle);
+
+        NearbyCentersFragment centersFragment = new NearbyCentersFragment();
+        Bundle centersBundle = new Bundle();
+        centersBundle.putString("user_email", userEmail);
+        centersFragment.setArguments(centersBundle);
+
+
+
+
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container,  new NearbyCentersFragment())
+                .replace(R.id.fragment_container,  centersFragment)
                 .commit();
 
 
@@ -51,12 +66,12 @@ public class HomeActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.nav_centers) {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container, new NearbyCentersFragment())
+                        .replace(R.id.fragment_container, centersFragment)
                         .commit();
             } else if (item.getItemId() == R.id.nav_donations) {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container,new MyDonationsFragment())
+                        .replace(R.id.fragment_container, donationsFragment)
                         .commit();
             }
             return true;

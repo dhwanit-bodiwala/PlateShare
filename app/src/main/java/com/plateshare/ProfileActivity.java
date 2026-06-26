@@ -74,7 +74,9 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         edit_profile_btn.setOnClickListener(v -> {
-            // TODO: navigate to EditProfileActivity
+            Intent editProfileIntent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+            editProfileIntent.putExtra("user_email",email);
+            startActivity(editProfileIntent);
         });
 
 
