@@ -26,201 +26,353 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PLATESHARE"
-                android:textColor="@color/saffron_dark"
-                android:textSize="11sp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.2"
-                android:layout_marginBottom="8dp"/>
+                android:text="PLATESHARE"
+                android:textColor="@color/saffron_dark"
+                android:textSize="11sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.02"
                 android:text="CREATE\nACCOUNT."
                 android:textColor="@color/text_primary"
                 android:textSize="44sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-black"
-                android:letterSpacing="-0.02"/>
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/border"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="32dp"/>
+                android:layout_marginBottom="32dp"
+                android:background="@color/border" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FULL NAME"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginBottom="8dp"/>
+                android:text="FULL NAME"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_input"
-                android:inputType="textPersonName"
                 android:hint="Your name"
-                android:textColorHint="@color/text_hint"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
-                android:paddingHorizontal="14dp"/>
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EMAIL"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="8dp"/>
+                android:text="EMAIL"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/email_signup"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_input"
-                android:inputType="textEmailAddress"
                 android:hint="you@example.com"
-                android:textColorHint="@color/text_hint"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
-                android:paddingHorizontal="14dp"/>
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PASSWORD"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="8dp"/>
+                android:text="PASSWORD"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_input"
-                android:inputType="textPassword"
                 android:hint="Min. 6 characters"
-                android:textColorHint="@color/text_hint"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
-                android:paddingHorizontal="14dp"/>
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CONFIRM PASSWORD"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="8dp"/>
+                android:text="CONFIRM PASSWORD"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/confirm_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_input"
-                android:inputType="textPassword"
                 android:hint="Re-enter password"
-                android:textColorHint="@color/text_hint"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
-                android:paddingHorizontal="14dp"/>
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PHONE"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="8dp"/>
+                android:text="PHONE"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/phone_signup"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_input"
-                android:inputType="phone"
                 android:hint="10-digit number"
-                android:textColorHint="@color/text_hint"
+                android:inputType="phone"
+                android:paddingHorizontal="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
-                android:paddingHorizontal="14dp"/>
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ADDRESS"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:letterSpacing="0.15"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="8dp"/>
+                android:text="ADDRESS"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <EditText
                 android:id="@+id/address_signup"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@drawable/bg_input"
-                android:inputType="textMultiLine"
+                android:gravity="top"
                 android:hint="Your full address"
-                android:textColorHint="@color/text_hint"
-                android:textColor="@color/text_primary"
-                android:textSize="15sp"
+                android:inputType="textMultiLine"
                 android:paddingHorizontal="14dp"
                 android:paddingVertical="14dp"
-                android:gravity="top"/>
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
+
+            <!-- ============ ROLE SELECTION ============ -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:text="I AM A"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+
+            <RadioGroup
+                android:id="@+id/role_group_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_donor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/green_deep"
+                    android:fontFamily="monospace"
+                    android:text="DONOR"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_receiver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/green_deep"
+                    android:fontFamily="monospace"
+                    android:text="RECEIVER"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+
+            </RadioGroup>
+
+            <!-- ============ DONOR TYPE (hidden unless role = Donor) ============ -->
+
+            <LinearLayout
+                android:id="@+id/donor_type_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:text="DONOR TYPE"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+
+                <RadioGroup
+                    android:id="@+id/donor_type_group_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_individual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/green_deep"
+                        android:fontFamily="monospace"
+                        android:text="INDIVIDUAL"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_organization"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/green_deep"
+                        android:fontFamily="monospace"
+                        android:text="ORGANIZATION"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!-- ============ ORGANIZATION FIELDS (hidden unless donor_type = Organization) ============ -->
+
+            <LinearLayout
+                android:id="@+id/organization_fields_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:text="ORGANIZATION NAME"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/organization_name_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_input"
+                    android:hint="e.g. Roti Ghar"
+                    android:inputType="text"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:text="CONTACT PERSON"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/contact_person_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_input"
+                    android:hint="Person to contact"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/border"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:background="@color/border" />
 
             <Button
                 android:id="@+id/signup_signup"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@drawable/bg_button_primary"
+                android:letterSpacing="0.08"
+                android:stateListAnimator="@null"
                 android:text="CREATE ACCOUNT →"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
-                android:stateListAnimator="@null"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/login_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ALREADY HAVE AN ACCOUNT? SIGN IN →"
-                android:textColor="@color/green_deep"
-                android:textSize="12sp"
-                android:fontFamily="monospace"
-                android:gravity="center"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="32dp"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="ALREADY HAVE AN ACCOUNT? SIGN IN →"
+                android:textColor="@color/green_deep"
+                android:textSize="12sp" />
 
         </LinearLayout>
 

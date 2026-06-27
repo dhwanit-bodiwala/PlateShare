@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
 
     String userName;
     String userEmail;
+    String userRole;
 
     TextView profile_btn;
     Button donate_btn;
@@ -29,14 +30,16 @@ public class HomeActivity extends AppCompatActivity {
 
         userName = getIntent().getStringExtra("user_name");
         userEmail = getIntent().getStringExtra("user_email");
+        userRole = getIntent().getStringExtra("user_role");
 
         profile_btn = findViewById(R.id.profile_btn);
         donate_btn = findViewById(R.id.donate_btn);
         bottom_nav = findViewById(R.id.bottom_nav);
 
 
-        if (userName.equals("guest")) {
+        if (!userRole.equals("donor")) {
             donate_btn.setVisibility(View.GONE);
+            bottom_nav.getMenu().findItem(R.id.nav_donations).setVisible(false);
         }
 
 
