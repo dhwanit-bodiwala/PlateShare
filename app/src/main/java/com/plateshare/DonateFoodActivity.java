@@ -118,6 +118,7 @@ public class DonateFoodActivity extends AppCompatActivity {
                 values.put("expiry_date", expiry);
                 values.put("allergies", allergies);
                 values.put("food_type", foodType);
+                values.put("status","Available");
 
 
                 long result = db.insert("donations", null, values);
