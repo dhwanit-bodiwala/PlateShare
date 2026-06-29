@@ -58,6 +58,10 @@
 
         <activity android:name=".RequestDetailsActivity" android:exported="false"/>
 
+        <activity android:name=".DeliveryConfirmationActivity" android:exported="false"/>
+
+        <activity android:name=".RatingActivity" android:exported="false"/>
+
     </application>
 
 </manifest>

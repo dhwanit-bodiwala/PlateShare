@@ -1,6 +1,7 @@
 package com.plateshare;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
     Button claim_btn_details;
 
     int donation_id;
-    String user_email, temp;
+    String user_email;
 
 
     @Override
@@ -107,7 +108,12 @@ public class DonationDetailsActivity extends AppCompatActivity {
             );
 
             if (rowsAffected > 0){
+                // changes here
                 Toast.makeText(this, "Donation Claimed", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DonationDetailsActivity.this,DeliveryConfirmationActivity.class);
+                intent.putExtra("user_email",user_email);
+                intent.putExtra("donation_id",donation_id);
+                startActivity(intent);
                 finish();
             }
             else {
