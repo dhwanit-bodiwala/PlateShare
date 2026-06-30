@@ -15,6 +15,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     Button edit_profile_btn, logout_btn;
 
+    TextView stat_value_1, stat_label_1, stat_value_2, stat_label_2, stat_value_3, stat_label_3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,19 @@ public class ProfileActivity extends AppCompatActivity {
         edit_profile_btn = findViewById(R.id.edit_profile_btn);
         logout_btn = findViewById(R.id.logout_btn);
 
+        stat_value_1 = findViewById(R.id.stat_value_1);
+        stat_label_1 = findViewById(R.id.stat_label_1);
+        stat_value_2 = findViewById(R.id.stat_value_2);
+        stat_label_2 = findViewById(R.id.stat_label_2);
+        stat_value_3 = findViewById(R.id.stat_value_3);
+        stat_label_3 = findViewById(R.id.stat_label_3);
+
+
 
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("user_email");
+        String user_role = intent.getStringExtra("user_role");
 
 
 
@@ -63,6 +74,18 @@ public class ProfileActivity extends AppCompatActivity {
         profile_email.setText(email);
         profile_phone.setText(phone);
         profile_address.setText(address);
+
+        if (user_role.equals("donor")){
+            stat_label_1.setText("Total Donations");
+            stat_label_2.setText("Completed");
+            stat_label_3.setText("Avg Rating");
+        }
+        else {
+            stat_label_1.setText("Total Claimed");
+            stat_label_2.setText("Request Posted");
+            stat_label_3.setText("Request Fulfilled");
+        }
+
 
 
 

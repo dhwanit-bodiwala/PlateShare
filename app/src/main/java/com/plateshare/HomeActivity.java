@@ -126,6 +126,7 @@ public class HomeActivity extends AppCompatActivity {
         profile_btn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             intent.putExtra("user_email", userEmail);
+            intent.putExtra("user_role",userRole);
             startActivity(intent);
         });
 
