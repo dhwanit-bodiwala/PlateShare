@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_warm"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:gravity="center">
+
+        <!-- Eyebrow -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ONE LAST STEP"
+            android:textColor="@color/green_deep"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Question -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DID THE DELIVERY\nGO THROUGH?"
+            android:textColor="@color/text_primary"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="-0.02"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This confirms whether you received the food. This action cannot be undone."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Yes button -->
+        <Button
+            android:id="@+id/yes_btn_delivery"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="YES, DELIVERY SUCCESSFUL →"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- No button -->
+        <Button
+            android:id="@+id/no_btn_delivery"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_secondary"
+            android:text="NO, IT FAILED"
+            android:textColor="@color/saffron_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+
+</LinearLayout>

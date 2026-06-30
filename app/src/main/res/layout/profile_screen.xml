@@ -12,12 +12,14 @@
         android:orientation="vertical">
 
         <!-- Green header block -->
+
+        <!-- Saffron accent bar -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="225dp"
             android:background="@color/green_deep"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <!-- Avatar circle -->
             <FrameLayout
@@ -27,18 +29,18 @@
                 <View
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/bg_circle_green"/>
+                    android:background="@drawable/bg_circle_green" />
 
                 <TextView
                     android:id="@+id/avatar_initial"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-black"
                     android:gravity="center"
                     android:text="D"
                     android:textColor="@color/white"
                     android:textSize="32sp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-black"/>
+                    android:textStyle="bold" />
 
             </FrameLayout>
 
@@ -46,16 +48,125 @@
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-black"
                 android:text="YOUR NAME"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-black"
-                android:layout_marginTop="12dp"/>
+                android:textStyle="bold" />
+
+            <!-- Stat strip — tap to open dashboard -->
+            <LinearLayout
+                android:id="@+id/stat_strip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_stat_strip"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/stat_value_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_label_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1"
+                        android:text="LABEL"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="28dp"
+                    android:layout_marginHorizontal="18dp"
+                    android:background="#40FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/stat_value_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_label_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1"
+                        android:text="LABEL"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="28dp"
+                    android:layout_marginHorizontal="18dp"
+                    android:background="#40FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/stat_value_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="@color/saffron"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stat_label_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1"
+                        android:text="LABEL"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <!-- Saffron accent bar -->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"

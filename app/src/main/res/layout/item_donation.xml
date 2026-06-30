@@ -115,6 +115,62 @@
                 android:textSize="14sp"
                 android:textStyle="bold"/>
 
+            <!-- Status -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATUS"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/donation_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="@color/saffron_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <!-- Rating section (hidden unless rated) -->
+            <LinearLayout
+                android:id="@+id/donation_rating_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_hint"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RECEIVER'S RATING"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/donation_rating_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textColor="@color/green_deep"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

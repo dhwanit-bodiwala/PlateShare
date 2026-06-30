@@ -23,7 +23,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "email TEXT UNIQUE," +
                 "password TEXT," +
                 "phone TEXT," +
-                "address TEXT)");
+                "address TEXT,"+
+                "role TEXT)");
 
         // Donations table
         db.execSQL("CREATE TABLE donations (" +
@@ -34,7 +35,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "expiry_date TEXT," +
                 "allergies TEXT," +
                 "food_type TEXT," +
-                "FOREIGN KEY(user_id) REFERENCES users(id))");
+                "status TEXT,"+
+                "claimed_by_user_id INTEGER,"+
+                "FOREIGN KEY(user_id) REFERENCES users(id),"+
+                "FOREIGN KEY(claimed_by_user_id) references users(id))");
 
         // Centers table
         db.execSQL("CREATE TABLE centers (" +
@@ -43,6 +47,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "address TEXT," +
                 "contact TEXT," +
                 "stock_info TEXT)");
+
+        // Donor_profile table
+         db.execSQL("CREATE TABLE donor_profile (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "user_id INTEGER," +
+                "donor_type TEXT," +
+                "organization_name TEXT," +
+                "contact_person TEXT," +
+                "FOREIGN KEY(user_id) REFERENCES users(id))");
+
+         // Requests table
+        db.execSQL("CREATE TABLE requests (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "receiver_id INTEGER," +
+                "title TEXT," +
+                "description TEXT," +
+                "quantity_needed TEXT," +
+                "location TEXT," +
+                "status TEXT," +
+                "accepted_by_user_id INTEGER," +
+                "FOREIGN KEY(receiver_id) REFERENCES users(id)," +
+                "FOREIGN KEY(accepted_by_user_id) REFERENCES users(id))");
+
+        // Ratings table
+        db.execSQL("CREATE TABLE ratings (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "donation_id INTEGER," +
+                "rated_by_user_id INTEGER," +
+                "rated_user_id INTEGER," +
+                "reliability INTEGER," +
+                "service_quality INTEGER," +
+                "communication INTEGER," +
+                "FOREIGN KEY(donation_id) REFERENCES donations(id)," +
+                "FOREIGN KEY(rated_by_user_id) REFERENCES users(id)," +
+                "FOREIGN KEY(rated_user_id) REFERENCES users(id))");
 
         // Insert sample centers
         db.execSQL("INSERT INTO centers VALUES (1, 'Ahmedabad Food Bank', 'Navrangpura, Ahmedabad', '079-12345678', 'Needs rice and dal')");
@@ -55,6 +94,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS users");
         db.execSQL("DROP TABLE IF EXISTS donations");
         db.execSQL("DROP TABLE IF EXISTS centers");
+        db.execSQL("DROP TABLE IF EXISTS donor_profile");
+        db.execSQL("DROP TABLE IF EXISTS requests");
+        db.execSQL("DROP TABLE IF EXISTS ratings");
         onCreate(db);
     }
 }

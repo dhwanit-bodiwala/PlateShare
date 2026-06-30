@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         guest_login.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             intent.putExtra("user_name","guest");
+            intent.putExtra("user_role","guest");
             startActivity(intent);
         });
 
@@ -93,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             int getEmailIndex = cursor.getColumnIndex("email");
             int getPasswordIndex = cursor.getColumnIndex("password");
             int getNameIndex = cursor.getColumnIndex("name");
+            int getRoleIndex = cursor.getColumnIndex("role");
 
             boolean flag = false;
 
@@ -100,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 String getEmail = cursor.getString(getEmailIndex);
                 String getPassword = cursor.getString(getPasswordIndex);
                 String getName = cursor.getString(getNameIndex);
+                String getRole = cursor.getString(getRoleIndex);
 
                 if (email.equals(getEmail) && password.equals(getPassword)){
                     flag = true;
@@ -107,6 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                     intent.putExtra("user_name",getName);
                     intent.putExtra("user_email",getEmail);
+                    intent.putExtra("user_role",getRole);
                     startActivity(intent);
                     finish();
                     break;
@@ -121,7 +125,6 @@ public class LoginActivity extends AppCompatActivity {
             cursor.close();
 
         });
-
 
     }
 }

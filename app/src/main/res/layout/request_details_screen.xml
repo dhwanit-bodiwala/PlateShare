@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_warm"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@color/saffron"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="48dp">
+
+            <!-- Back -->
+            <TextView
+                android:id="@+id/back_btn_request_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← BACK"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Eyebrow -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REQUEST DETAILS"
+                android:textColor="@color/green_deep"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/details_request_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request Title"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.02"
+                android:layout_marginBottom="36dp"/>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginBottom="28dp"/>
+
+            <!-- Description -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/details_request_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Quantity needed -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUANTITY NEEDED"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/details_request_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOCATION"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/details_request_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:layout_marginBottom="28dp"/>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Receiver name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REQUESTED BY"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/details_request_receiver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receiver Name"
+                android:textColor="@color/green_deep"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="36dp"/>
+
+            <!-- Accept button -->
+            <Button
+                android:id="@+id/accept_btn_request_details"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_button_primary"
+                android:text="ACCEPT THIS REQUEST →"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

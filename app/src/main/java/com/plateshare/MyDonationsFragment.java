@@ -35,7 +35,13 @@ public class MyDonationsFragment extends Fragment {
         userCursor.close();
 
 
-        Cursor cursor1 = db.query("donations", null, "user_id=?", new String[]{userId}, null, null, null);
+        Cursor cursor1 = db.rawQuery(
+                "SELECT donations.*, ratings.reliability, ratings.communication " +
+                        "FROM donations " +
+                        "LEFT JOIN ratings ON donations.id = ratings.donation_id " +
+                        "WHERE donations.user_id = ?",
+                new String[]{userId}
+        );
 
         donation_recycler.setAdapter(new DonationAdapter(getContext(), cursor1));
 
