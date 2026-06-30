@@ -12,7 +12,7 @@
 | **Min SDK** | API 24 (Android Nougat) |
 | **Database** | SQLite (local, offline-first) |
 | **Architecture** | Activity + Fragment based, role-driven UI |
-| **Status** | Active development |
+| **Status** | Feature-complete |
 
 PlateShare was built as part of a diploma-level skill-based training program, with an emphasis on relational database design, role-based access control (RBAC), and real-world transactional logic (claim-locking, atomic status transitions).
 
@@ -31,13 +31,26 @@ PlateShare was built as part of a diploma-level skill-based training program, wi
 - Receivers can browse all **available** donations in real time
 - Full donation detail view before committing to a claim
 - **Atomic claim-locking** — guarantees that once a donation is claimed, no other receiver can claim the same donation, even under concurrent access
-- Donation status lifecycle: `Available → Claimed → Completed` (or `Cancelled`)
+- Donation status lifecycle: `Available → Claimed → Completed`
+- **Delivery confirmation** — receiver confirms pickup before a donation is marked complete; declining a delivery releases the claim back to `Available` for other receivers
 
 ### 🙋 Food Requests
 - Receivers can post specific food requests (title, description, quantity needed, pickup location)
 - Donors can browse all **open** requests and accept the ones they can fulfill
 - Same atomic locking mechanism applied to request acceptance — no double-accepting
+- Request status lifecycle: `Open → Accepted`
 - Dedicated "My Requests" view for receivers to track the status of their own requests
+
+### ⭐ Rating System
+- After a donation is confirmed delivered, the receiver rates the donor on **reliability** and **communication**
+- An overall score is calculated dynamically from these two metrics — no redundant data stored
+- Average rating surfaces directly on the donor's profile
+
+### 📊 Profile Dashboard
+- Every user's profile includes a glanceable **stat strip** summarizing their activity, tailored to their role:
+  - **Donors** see Total Donations, Completed donations, and Average Rating
+  - **Receivers** see Total Claimed, Requests Posted, and Requests Fulfilled
+- Stats are calculated live from the database on every profile load — no caching, always accurate
 
 ### 🏢 Nearby Food Centers
 - Browsable directory of partner food banks and charity centers
@@ -46,7 +59,7 @@ PlateShare was built as part of a diploma-level skill-based training program, wi
 ### 👤 Profile Management
 - View and edit personal profile (name, phone, address)
 - Partial-update support — leave a field blank to keep its current value unchanged
-- Secure password change flow with validation
+- Secure password change flow with validation, including a full Forgot Password recovery flow
 
 ---
 
@@ -60,12 +73,14 @@ PlateShare uses a normalized relational schema built on SQLite, with foreign-key
 | `donor_profile` | Extended profile data for Donor accounts (Individual / Organization) |
 | `donations` | Food donation listings with status and claim tracking |
 | `requests` | Food requests posted by receivers, with acceptance tracking |
+| `ratings` | Post-delivery ratings given by receivers to donors |
 | `centers` | Seeded directory of partner food charity centers |
 
 ### Key Design Decisions
 - **Atomic locking via conditional `UPDATE`** — claim/accept actions use a `WHERE status = 'Available'` (or `'Open'`) clause directly inside the `UPDATE` statement, ensuring that simultaneous claim attempts cannot both succeed. This is the same principle used in production-grade inventory and booking systems.
 - **Separate `donor_profile` table** rather than extending `users` directly — keeps the core user table lean and avoids null-heavy columns for non-donor accounts.
-- **Status-driven workflows** — both donations and requests follow an explicit state machine (`Available/Open → Claimed/Accepted → Completed/Cancelled`), making the system's business logic transparent and auditable.
+- **Status-driven workflows** — both donations and requests follow an explicit state machine (`Available/Open → Claimed/Accepted → Completed`), making the system's business logic transparent and auditable.
+- **Computed metrics over stored aggregates** — overall donor rating and profile stats are calculated live via SQL aggregate queries (`COUNT`, `AVG`) rather than stored and synced separately, eliminating an entire category of data-consistency bugs.
 
 ---
 
@@ -89,20 +104,31 @@ PlateShare uses a custom-built visual identity rather than default Material comp
 ```
 SplashActivity
       ↓
-LoginActivity ──→ SignupActivity
-      ↓               (Role + Donor Type selection)
+LoginActivity ──→ SignupActivity (Role + Donor Type selection)
+      ↓               ↓
+      ├──→ ForgotPasswordActivity → ChangePasswordActivity
+      ↓
 HomeActivity (role-aware)
   ├── Bottom Nav: Nearby Centers
   ├── Bottom Nav: My Donations (Donor) / Browse Donations (Receiver)
   ├── Bottom Nav: Browse Requests (Donor) / My Requests (Receiver)
-  ├── + Donate Food (Donor only)
-  ├── + Request Food (Receiver only)
-  └── Profile → Edit Profile / Change Password / Logout
+  ├── + Donate Food (Donor only) → DonateFoodActivity
+  ├── + Request Food (Receiver only) → CreateRequestActivity
+  └── Profile (with live stat dashboard)
+        ├── Edit Profile
+        ├── Change Password
+        └── Logout
+
+Donation flow:
+  BrowseDonations → DonationDetails → Claim → DeliveryConfirmation → RatingActivity
+
+Request flow:
+  BrowseRequests → RequestDetails → Accept
 ```
 
-- **Activities** handle full-screen, navigational flows (auth, detail views, forms)
+- **Activities** handle full-screen, navigational flows (auth, detail views, forms, confirmations)
 - **Fragments** handle tab-based content within `HomeActivity`, swapped dynamically based on the active bottom navigation tab and the user's role
-- **Adapters** bind SQLite `Cursor` data directly to `RecyclerView` rows, including JOIN-based queries for cross-table displays (e.g. showing a donor's name alongside their donation)
+- **Adapters** bind SQLite `Cursor` data directly to `RecyclerView` rows, including filtered and JOIN-based queries for cross-table displays (e.g. showing a donor's name alongside their donation)
 
 ---
 
@@ -133,9 +159,9 @@ No external API keys or backend configuration required — PlateShare runs entir
 - [x] Donor sub-types (Individual / Organization)
 - [x] Donation lifecycle with atomic claim-locking
 - [x] Food request lifecycle with atomic accept-locking
-- [ ] Delivery confirmation flow
-- [ ] Two-way rating system (Donor ↔ Receiver)
-- [ ] Personal impact dashboard (donations completed, requests fulfilled, average rating)
+- [x] Delivery confirmation flow
+- [x] Rating system (Receiver → Donor)
+- [x] Profile activity dashboard
 
 ---
 
